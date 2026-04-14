@@ -167,7 +167,7 @@
     }
 
     .container{
-      width:min(var(--max), calc(100% - 34px));
+      width:min(1320px, calc(100% - 34px));
       margin:0 auto;
       position:relative;
       z-index:2;
@@ -510,6 +510,7 @@
       height:100%;
       object-fit:contain;
       object-position:center;
+      padding:0;
       z-index:0;
       filter:drop-shadow(0 26px 30px rgba(0,0,0,.45));
       transition:transform .35s ease;
@@ -520,14 +521,11 @@
     }
 
     .hero-media video{
-      transform:scale(1.02);
+      transform:scale(1.08);
       background:#040504;
     }
 
-    .hero-media:hover img{
-      transform:scale(1.04);
-    }
-
+    .hero-media:hover img,
     .hero-media:hover video{
       transform:scale(1.04);
     }
@@ -1182,7 +1180,7 @@
       </div>
 
       <div class="showcase reveal tilt">
-        <img src="immagini/interno_grigio.png" alt="Flora Volt design principale" />
+        <img src="immagini/render-dark.png" alt="Flora Volt design principale" />
 
         <!--
         Per usare un video al posto dell'immagine sopra, sostituisci con:
