@@ -490,10 +490,10 @@
       position:absolute;
       inset:16px;
       border-radius:28px;
-      border:1px solid rgba(120,255,50,.16);
+      border:1px solid rgba(120,255,50,.12);
       pointer-events:none;
       z-index:1;
-      box-shadow:inset 0 0 30px rgba(120,255,50,.05);
+      box-shadow:inset 0 0 30px rgba(120,255,50,.04);
     }
 
     @keyframes shine{
@@ -526,69 +526,57 @@
         0 0 70px rgba(120,255,50,.12);
     }
 
-    .hero-snake-border{
+    .hero-border-svg{
       position:absolute;
-      inset:0;
-      border-radius:36px;
-      pointer-events:none;
+      inset:10px;
+      width:calc(100% - 20px);
+      height:calc(100% - 20px);
       z-index:4;
-      opacity:0;
-      transition:opacity .25s ease;
+      pointer-events:none;
+      overflow:visible;
     }
 
-    .hero-media:hover .hero-snake-border{
+    .hero-border-base{
+      fill:none;
+      stroke:rgba(120,255,50,.12);
+      stroke-width:0.35;
+    }
+
+    .hero-border-glow{
+      fill:none;
+      stroke:#9dff62;
+      stroke-width:0.42;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-dasharray:28 284;
+      stroke-dashoffset:0;
+      filter:
+        drop-shadow(0 0 4px rgba(120,255,50,.55))
+        drop-shadow(0 0 10px rgba(120,255,50,.38))
+        drop-shadow(0 0 18px rgba(120,255,50,.20));
+      opacity:0;
+      transition:opacity .25s ease;
+      animation:borderRun 3.2s linear infinite;
+    }
+
+    .hero-media:hover .hero-border-glow{
       opacity:1;
     }
 
-    .hero-snake-border::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      border-radius:inherit;
-      padding:2px;
-      background:
-        conic-gradient(
-          from 0deg,
-          transparent 0deg,
-          transparent 300deg,
-          rgba(120,255,50,0.10) 320deg,
-          rgba(120,255,50,0.95) 338deg,
-          rgba(220,255,190,1) 348deg,
-          rgba(120,255,50,0.95) 356deg,
-          transparent 360deg
-        );
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor;
-      mask-composite:exclude;
-      animation:snakeRotate 2.2s linear infinite;
-      filter:
-        drop-shadow(0 0 6px rgba(120,255,50,.55))
-        drop-shadow(0 0 14px rgba(120,255,50,.45))
-        drop-shadow(0 0 26px rgba(120,255,50,.28));
-    }
-
-    .hero-snake-border::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:inherit;
-      box-shadow:
-        inset 0 0 24px rgba(120,255,50,.06),
-        0 0 18px rgba(120,255,50,.08);
-    }
-
-    @keyframes snakeRotate{
-      from{ transform:rotate(0deg); }
-      to{ transform:rotate(360deg); }
+    @keyframes borderRun{
+      from{
+        stroke-dashoffset:0;
+      }
+      to{
+        stroke-dashoffset:-312;
+      }
     }
 
     .hero-badge{
       position:absolute;
       right:22px;
       bottom:22px;
-      z-index:3;
+      z-index:5;
       padding:14px 18px;
       border-radius:20px;
       background:rgba(5,8,5,.68);
@@ -1140,7 +1128,12 @@
 
       <div class="hero-media reveal tilt">
         <img src="immagini/floravolt_darkedition.png" alt="Flora Volt Dark Edition" />
-        <div class="hero-snake-border"></div>
+
+        <svg class="hero-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <rect class="hero-border-base" x="2" y="2" width="96" height="96" rx="8" ry="8"></rect>
+          <rect class="hero-border-glow" x="2" y="2" width="96" height="96" rx="8" ry="8"></rect>
+        </svg>
+
         <div class="hero-badge">
           <strong>Concept Vision</strong>
           <span>Flora Volt Dark Edition</span>
