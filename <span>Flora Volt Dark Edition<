@@ -511,7 +511,78 @@
 .hero-media:hover img{
   transform:scale(1.14);
 }
+.hero-media{
+  transition:transform .35s ease, box-shadow .35s ease;
+}
 
+.hero-media:hover{
+  box-shadow:
+    var(--shadow-strong),
+    0 0 28px rgba(120,255,50,.18),
+    0 0 70px rgba(120,255,50,.12);
+}
+
+.hero-snake-border{
+  position:absolute;
+  inset:0;
+  border-radius:36px;
+  pointer-events:none;
+  z-index:4;
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.hero-media:hover .hero-snake-border{
+  opacity:1;
+}
+
+.hero-snake-border::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  padding:2px;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 300deg,
+      rgba(120,255,50,0.10) 320deg,
+      rgba(120,255,50,0.95) 338deg,
+      rgba(220,255,190,1) 348deg,
+      rgba(120,255,50,0.95) 356deg,
+      transparent 360deg
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:snakeRotate 2.2s linear infinite;
+  filter:
+    drop-shadow(0 0 6px rgba(120,255,50,.55))
+    drop-shadow(0 0 14px rgba(120,255,50,.45))
+    drop-shadow(0 0 26px rgba(120,255,50,.28));
+}
+
+.hero-snake-border::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  box-shadow:
+    inset 0 0 24px rgba(120,255,50,.06),
+    0 0 18px rgba(120,255,50,.08);
+}
+
+@keyframes snakeRotate{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
     .hero-badge{
       position:absolute;
       right:22px;
@@ -1062,11 +1133,13 @@
         </div>
       </div>
 
-      <div class="hero-media reveal tilt">
-        <img src="immagini/floravolt_darkedition.png" alt="Flora Volt Dark Edition" />
-        <div class="hero-badge">
-          <strong>Concept Vision</strong>
-          <span>Flora Volt Dark Edition</span>
+  <div class="hero-media reveal tilt">
+    <img src="immagini/floravolt_darkedition.png" alt="Flora Volt Dark Edition" />
+
+    <div class="hero-snake-border"></div>
+    <div class="hero-badge">
+      <strong>Concept Vision</strong>
+      <span>Flora Volt Dark Edition</span>
         </div>
       </div>
     </div>
