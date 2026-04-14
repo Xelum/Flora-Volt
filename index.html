@@ -160,13 +160,14 @@
       text-decoration:none;
     }
 
-    img{
+    img,
+    video{
       display:block;
       max-width:100%;
     }
 
     .container{
-      width:min(var(--max), calc(100% - 34px));
+      width:min(1320px, calc(100% - 34px));
       margin:0 auto;
       position:relative;
       z-index:2;
@@ -501,7 +502,8 @@
       45%,55%{ transform:translateX(120%); }
     }
 
-    .hero-media img{
+    .hero-media img,
+    .hero-media video{
       position:absolute;
       inset:0;
       width:100%;
@@ -511,12 +513,21 @@
       padding:0;
       z-index:0;
       filter:drop-shadow(0 26px 30px rgba(0,0,0,.45));
-      transform:scale(1.12);
       transition:transform .35s ease;
     }
 
-    .hero-media:hover img{
-      transform:scale(1.14);
+    .hero-media img{
+      transform:scale(1.08);
+    }
+
+    .hero-media video{
+      transform:scale(1.08);
+      background:#040504;
+    }
+
+    .hero-media:hover img,
+    .hero-media:hover video{
+      transform:scale(1.04);
     }
 
     .hero-media:hover{
@@ -564,12 +575,8 @@
     }
 
     @keyframes borderRun{
-      from{
-        stroke-dashoffset:0;
-      }
-      to{
-        stroke-dashoffset:-312;
-      }
+      from{ stroke-dashoffset:0; }
+      to{ stroke-dashoffset:-312; }
     }
 
     .hero-badge{
@@ -626,6 +633,7 @@
     }
 
     .showcase{
+      min-height:500px;
       border-radius:34px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.10);
@@ -640,17 +648,21 @@
       inset:0;
       background:radial-gradient(circle at 50% 30%, rgba(120,255,50,.12), transparent 35%);
       pointer-events:none;
+      z-index:1;
     }
 
-    .showcase img{
+    .showcase img,
+    .showcase video{
       width:100%;
-      height:auto;
-      object-fit:contain;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
       background:#030403;
       transition:transform .45s ease;
     }
 
-    .showcase:hover img{
+    .showcase:hover img,
+    .showcase:hover video{
       transform:scale(1.02);
     }
 
@@ -730,25 +742,27 @@
 
     .panel-interior{
       min-height:640px;
+      position:relative;
       background:#030403;
     }
 
-    .panel-interior::before{
-      content:"";
+    .panel-media{
       position:absolute;
       inset:0;
-      background-image:url('immagini/floravolt_darkedition.png');
-      background-repeat:no-repeat;
-      background-size:175%;
-      background-position:64% 74%;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      z-index:0;
+      background:#030403;
       filter:saturate(1.06) contrast(1.04);
-      transform:scale(1.02);
     }
 
     .panel-interior::after{
       content:"";
       position:absolute;
       inset:0;
+      z-index:1;
       background:
         linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.20) 68%, rgba(0,0,0,.72)),
         radial-gradient(circle at 50% 20%, rgba(120,255,50,.10), transparent 28%);
@@ -826,7 +840,8 @@
       box-shadow:0 26px 60px rgba(0,0,0,.36), 0 0 26px rgba(120,255,50,.08);
     }
 
-    .version-card img{
+    .version-card img,
+    .version-card video{
       width:100%;
       height:100%;
       object-fit:contain;
@@ -835,7 +850,8 @@
       transition:transform .35s ease;
     }
 
-    .version-card:hover img{
+    .version-card:hover img,
+    .version-card:hover video{
       transform:scale(1.03);
     }
 
@@ -1020,12 +1036,15 @@
 
       .hero-media,
       .panel-interior,
-      .version-card{
+      .version-card,
+      .showcase{
         min-height:440px;
       }
 
       .hero-media img,
-      .version-card img{
+      .hero-media video,
+      .version-card img,
+      .version-card video{
         padding:16px;
       }
 
@@ -1129,6 +1148,14 @@
       <div class="hero-media reveal tilt">
         <img src="immagini/floravolt_darkedition.png" alt="Flora Volt Dark Edition" />
 
+        <!--
+        Per usare un video al posto dell'immagine sopra, sostituisci con:
+
+        <video autoplay muted loop playsinline>
+          <source src="video/hero-flora-volt.mp4" type="video/mp4">
+        </video>
+        -->
+
         <svg class="hero-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <rect class="hero-border-base" x="2" y="2" width="96" height="96" rx="8" ry="8"></rect>
           <rect class="hero-border-glow" x="2" y="2" width="96" height="96" rx="8" ry="8"></rect>
@@ -1154,6 +1181,14 @@
 
       <div class="showcase reveal tilt">
         <img src="immagini/render-dark.png" alt="Flora Volt design principale" />
+
+        <!--
+        Per usare un video al posto dell'immagine sopra, sostituisci con:
+
+        <video autoplay muted loop playsinline>
+          <source src="video/design-showcase.mp4" type="video/mp4">
+        </video>
+        -->
       </div>
 
       <div class="spec-grid">
@@ -1196,6 +1231,16 @@
 
       <div class="split-grid">
         <div class="panel panel-interior reveal tilt">
+          <img class="panel-media" src="immagini/interno_grigio.png" alt="Interni Flora Volt" />
+
+          <!--
+          Per usare un video al posto dell'immagine sopra, sostituisci con:
+
+          <video class="panel-media" autoplay muted loop playsinline>
+            <source src="video/interni-flora.mp4" type="video/mp4">
+          </video>
+          -->
+
           <div class="panel-copy">
             <h3>Smart cockpit</h3>
             <p>
@@ -1263,6 +1308,20 @@
             <p>Più pulita ed elegante, ideale per raccontare una nuova idea di mobilità premium in città.</p>
           </div>
         </div>
+
+        <!--
+        Se vuoi usare video nelle versioni, il blocco è questo:
+
+        <div class="version-card reveal tilt">
+          <video autoplay muted loop playsinline>
+            <source src="video/versione-dark.mp4" type="video/mp4">
+          </video>
+          <div class="version-copy">
+            <strong>Dark Edition</strong>
+            <p>Più decisa, più hi-tech, con un look urbano contemporaneo dal carattere netto e distintivo.</p>
+          </div>
+        </div>
+        -->
       </div>
     </div>
   </section>
