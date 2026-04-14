@@ -4,10 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flora Volt | Microcar elettrica urbana</title>
-  <meta name="description" content="Flora Volt è la microcar elettrica urbana firmata Flora: design essenziale, interni digitali, esperienza premium e mobilità intelligente per la città." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Flora Volt è la microcar elettrica urbana firmata Flora: design essenziale, interni digitali, esperienza premium e mobilità intelligente per la città."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root{
@@ -42,10 +49,10 @@
       font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 12% 18%, rgba(120,255,50,.24), transparent 0 24%),
-        radial-gradient(circle at 84% 14%, rgba(120,255,50,.20), transparent 0 22%),
-        radial-gradient(circle at 50% 85%, rgba(120,255,50,.16), transparent 0 30%),
-        radial-gradient(circle at 50% 45%, rgba(80,255,120,.10), transparent 0 28%),
+        radial-gradient(circle at 12% 18%, rgba(120,255,50,.24), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(120,255,50,.20), transparent 22%),
+        radial-gradient(circle at 50% 85%, rgba(120,255,50,.16), transparent 30%),
+        radial-gradient(circle at 50% 45%, rgba(80,255,120,.10), transparent 28%),
         linear-gradient(180deg, #010201 0%, #061008 38%, #020302 100%);
       overflow-x:hidden;
       position:relative;
@@ -454,135 +461,129 @@
       line-height:1.6;
     }
 
-.hero-media{
-  min-height:76vh;
-  border-radius:36px;
-  overflow:hidden;
-  position:relative;
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:var(--shadow-strong), 0 0 40px rgba(120,255,50,.10);
-  background:#040504;
-  transition:transform .35s ease;
-  transform-style:preserve-3d;
-}
+    .hero-media{
+      min-height:76vh;
+      border-radius:36px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow-strong), 0 0 40px rgba(120,255,50,.10);
+      background:#040504;
+      transition:transform .35s ease, box-shadow .35s ease;
+      transform-style:preserve-3d;
+    }
 
-.hero-media::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:2;
-  pointer-events:none;
-  background:
-    linear-gradient(120deg, transparent 0%, rgba(255,255,255,.08) 35%, transparent 60%),
-    radial-gradient(circle at center, transparent 38%, rgba(0,0,0,.08) 72%, rgba(0,0,0,.22) 100%);
-  animation:shine 5.2s ease-in-out infinite;
-}
+    .hero-media::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,.08) 35%, transparent 60%),
+        radial-gradient(circle at center, transparent 38%, rgba(0,0,0,.08) 72%, rgba(0,0,0,.22) 100%);
+      animation:shine 5.2s ease-in-out infinite;
+    }
 
-.hero-media::after{
-  content:"";
-  position:absolute;
-  inset:16px;
-  border-radius:28px;
-  border:1px solid rgba(120,255,50,.16);
-  pointer-events:none;
-  z-index:1;
-  box-shadow:inset 0 0 30px rgba(120,255,50,.05);
-}
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:16px;
+      border-radius:28px;
+      border:1px solid rgba(120,255,50,.16);
+      pointer-events:none;
+      z-index:1;
+      box-shadow:inset 0 0 30px rgba(120,255,50,.05);
+    }
 
-@keyframes shine{
-  0%,100%{ transform:translateX(-120%); }
-  45%,55%{ transform:translateX(120%); }
-}
+    @keyframes shine{
+      0%,100%{ transform:translateX(-120%); }
+      45%,55%{ transform:translateX(120%); }
+    }
 
-.hero-media img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  padding:0;
-  z-index:0;
-  filter:drop-shadow(0 26px 30px rgba(0,0,0,.45));
-  transform:scale(1.12);
-  transition:transform .35s ease;
-}
+    .hero-media img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      padding:0;
+      z-index:0;
+      filter:drop-shadow(0 26px 30px rgba(0,0,0,.45));
+      transform:scale(1.12);
+      transition:transform .35s ease;
+    }
 
-.hero-media:hover img{
-  transform:scale(1.14);
-}
-.hero-media{
-  transition:transform .35s ease, box-shadow .35s ease;
-}
+    .hero-media:hover img{
+      transform:scale(1.14);
+    }
 
-.hero-media:hover{
-  box-shadow:
-    var(--shadow-strong),
-    0 0 28px rgba(120,255,50,.18),
-    0 0 70px rgba(120,255,50,.12);
-}
+    .hero-media:hover{
+      box-shadow:
+        var(--shadow-strong),
+        0 0 28px rgba(120,255,50,.18),
+        0 0 70px rgba(120,255,50,.12);
+    }
 
-.hero-snake-border{
-  position:absolute;
-  inset:0;
-  border-radius:36px;
-  pointer-events:none;
-  z-index:4;
-  opacity:0;
-  transition:opacity .25s ease;
-}
+    .hero-snake-border{
+      position:absolute;
+      inset:0;
+      border-radius:36px;
+      pointer-events:none;
+      z-index:4;
+      opacity:0;
+      transition:opacity .25s ease;
+    }
 
-.hero-media:hover .hero-snake-border{
-  opacity:1;
-}
+    .hero-media:hover .hero-snake-border{
+      opacity:1;
+    }
 
-.hero-snake-border::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  border-radius:inherit;
-  padding:2px;
-  background:
-    conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      transparent 300deg,
-      rgba(120,255,50,0.10) 320deg,
-      rgba(120,255,50,0.95) 338deg,
-      rgba(220,255,190,1) 348deg,
-      rgba(120,255,50,0.95) 356deg,
-      transparent 360deg
-    );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  animation:snakeRotate 2.2s linear infinite;
-  filter:
-    drop-shadow(0 0 6px rgba(120,255,50,.55))
-    drop-shadow(0 0 14px rgba(120,255,50,.45))
-    drop-shadow(0 0 26px rgba(120,255,50,.28));
-}
+    .hero-snake-border::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:inherit;
+      padding:2px;
+      background:
+        conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          transparent 300deg,
+          rgba(120,255,50,0.10) 320deg,
+          rgba(120,255,50,0.95) 338deg,
+          rgba(220,255,190,1) 348deg,
+          rgba(120,255,50,0.95) 356deg,
+          transparent 360deg
+        );
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      animation:snakeRotate 2.2s linear infinite;
+      filter:
+        drop-shadow(0 0 6px rgba(120,255,50,.55))
+        drop-shadow(0 0 14px rgba(120,255,50,.45))
+        drop-shadow(0 0 26px rgba(120,255,50,.28));
+    }
 
-.hero-snake-border::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  box-shadow:
-    inset 0 0 24px rgba(120,255,50,.06),
-    0 0 18px rgba(120,255,50,.08);
-}
+    .hero-snake-border::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      box-shadow:
+        inset 0 0 24px rgba(120,255,50,.06),
+        0 0 18px rgba(120,255,50,.08);
+    }
 
-@keyframes snakeRotate{
-  from{
-    transform:rotate(0deg);
-  }
-  to{
-    transform:rotate(360deg);
-  }
-}
+    @keyframes snakeRotate{
+      from{ transform:rotate(0deg); }
+      to{ transform:rotate(360deg); }
+    }
+
     .hero-badge{
       position:absolute;
       right:22px;
@@ -931,7 +932,7 @@
     .field textarea,
     .field select{
       width:100%;
-      padding:16px 16px;
+      padding:16px;
       border-radius:16px;
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.12);
@@ -1015,7 +1016,9 @@
     }
 
     @media (max-width:820px){
-      :root{ --header:78px; }
+      :root{
+        --header:78px;
+      }
 
       .nav-links{
         display:none;
@@ -1122,10 +1125,12 @@
             <strong>180 km*</strong>
             <span>Autonomia urbana pensata per una routine semplice e quotidiana.</span>
           </div>
+
           <div class="stat glass tilt">
             <strong>100% EV</strong>
             <span>Guida fluida, silenziosa e zero emissioni locali.</span>
           </div>
+
           <div class="stat glass tilt">
             <strong>Smart interior</strong>
             <span>Plancia digitale e abitacolo ordinato, essenziale, moderno.</span>
@@ -1133,13 +1138,12 @@
         </div>
       </div>
 
-  <div class="hero-media reveal tilt">
-    <img src="immagini/floravolt_darkedition.png" alt="Flora Volt Dark Edition" />
-
-    <div class="hero-snake-border"></div>
-    <div class="hero-badge">
-      <strong>Concept Vision</strong>
-      <span>Flora Volt Dark Edition</span>
+      <div class="hero-media reveal tilt">
+        <img src="immagini/floravolt_darkedition.png" alt="Flora Volt Dark Edition" />
+        <div class="hero-snake-border"></div>
+        <div class="hero-badge">
+          <strong>Concept Vision</strong>
+          <span>Flora Volt Dark Edition</span>
         </div>
       </div>
     </div>
@@ -1309,29 +1313,31 @@
           <form action="mailto:floravolt@florambiente.it" method="post" enctype="text/plain">
             <div class="grid2">
               <div class="field">
-                <label>Nome</label>
-                <input type="text" name="Nome" placeholder="Il tuo nome" />
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" name="Nome" placeholder="Il tuo nome" />
               </div>
+
               <div class="field">
-                <label>Cognome</label>
-                <input type="text" name="Cognome" placeholder="Il tuo cognome" />
+                <label for="cognome">Cognome</label>
+                <input id="cognome" type="text" name="Cognome" placeholder="Il tuo cognome" />
               </div>
             </div>
 
             <div class="grid2">
               <div class="field">
-                <label>Email</label>
-                <input type="email" name="Email" placeholder="nome@email.it" />
+                <label for="email">Email</label>
+                <input id="email" type="email" name="Email" placeholder="nome@email.it" />
               </div>
+
               <div class="field">
-                <label>Telefono</label>
-                <input type="tel" name="Telefono" placeholder="+39 ..." />
+                <label for="telefono">Telefono</label>
+                <input id="telefono" type="tel" name="Telefono" placeholder="+39 ..." />
               </div>
             </div>
 
             <div class="field">
-              <label>Interesse</label>
-              <select name="Interesse">
+              <label for="interesse">Interesse</label>
+              <select id="interesse" name="Interesse">
                 <option>Informazioni commerciali</option>
                 <option>Distribuzione / rivendita</option>
                 <option>Partnership</option>
@@ -1340,8 +1346,8 @@
             </div>
 
             <div class="field">
-              <label>Messaggio</label>
-              <textarea name="Messaggio" placeholder="Scrivi qui la tua richiesta..."></textarea>
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="Messaggio" placeholder="Scrivi qui la tua richiesta..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Invia richiesta</button>
@@ -1360,12 +1366,14 @@
 
   <script>
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
     const orb = document.getElementById('energyOrb');
 
@@ -1377,7 +1385,7 @@
 
     const tiltItems = document.querySelectorAll('.tilt');
 
-    tiltItems.forEach(item => {
+    tiltItems.forEach((item) => {
       item.addEventListener('mousemove', (e) => {
         const rect = item.getBoundingClientRect();
         const x = e.clientX - rect.left;
